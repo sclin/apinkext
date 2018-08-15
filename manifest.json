@@ -1,0 +1,30 @@
+{
+  "name": "bunjang",
+  "version": "0.0.1",
+  "manifest_version": 2,
+  "description": "Injecting bunjang",
+  "homepage_url": "http://m.bunjang.co.kr",
+  "background": {
+    "scripts": [
+      "background.js"
+    ],
+    "persistent": true
+  },
+  "browser_action": {
+    "default_title": "Inject bunjang!"
+  },
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "js": ["detect.js"]
+    }
+  ],
+  "permissions": [
+    "https://m.bunjang.co.kr/*",
+    "http://m.bunjang.co.kr/*",
+    "https://cafe.naver.com/*",
+    "http://cafe.naver.com/*",
+    "tabs",
+    "activeTab"
+  ]
+}
